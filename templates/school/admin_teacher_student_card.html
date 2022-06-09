@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <link rel="shortcut icon" href="{% static '/images/cnhs-logo.png' %}">
+    <meta name="viewport" content="'width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: brown;
+      text-align: center;
+      cursor: pointer;
+      width: 50%;
+      font-size: 18px;
+
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto ;
+      padding: 10px;
+    }
+
+    a:link {
+      text-decoration: none;
+
+    }
+
+    a.b{
+        padding-left: 0;
+
+    }
+
+</style>
+</head>
+
+<body>
+{% include "school/navbar.html" %}
+
+<br>
+<br>
+<br>
+<br>
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/admin-p.png "%}" alt="John" style="width:100%">
+          <br>
+        <p class="title">ADMIN</p>
+        <p><a class="b" href="/adminlogin"><button>LOGIN</button></a></p>
+      </div>
+
+    </div>
+
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/Teacher-p.png" %}" alt="John" style="width:100%">
+          <br>
+        <p class="title">TEACHER</p>
+        <p><a class="b" href="/teacherlogin"><button>LOGIN</button></a></p>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/Student-p.png" %}" alt="John" style="width:100%">
+          <br>
+        <p class="title">STUDENT</p>
+        <p><a class="b" href="/studentlogin"><button>LOGIN</button></a></p>
+      </div>
+    </div>
+
+  </div>
+
+
+{% include "school/footer.html" %}
+</body>
+
+</html>
