@@ -47,3 +47,4 @@ urllib3==1.26.9
 wcwidth==0.2.5
 whitenoise==6.2.0
 pyzmq ==23.1.0
+jupyter-client
