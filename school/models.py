@@ -1,40 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
-import os
 from twilio.rest import Client
 from datetime import datetime,timedelta
 
 
 class Message(models.Model):
-    name = models.CharField(max_length=100)
-    score = models.IntegerField(default=0)
-    def __str__(self):
-        return self.name
+    pass
 
-    def save(self, *args, **kwargs):
-        if self.score >= 70:
-            account_sid = 'AC7be2a07878a1d7d038b735d612220f3c'
-            auth_token = 'f3c99f6d06dc86716344253e0e1e9de9'
-            client = Client(account_sid, auth_token)
-
-            message = client.messages.create(
-                body=f"Congratulations {self.name}, your score is {self.score}",
-                from_='+13365856245',
-                to='+639685012432'
-            )
-        else:
-            account_sid = 'AC7be2a07878a1d7d038b735d612220f3c'
-            auth_token = 'f3c99f6d06dc86716344253e0e1e9de9'
-            client = Client(account_sid, auth_token)
-
-            message = client.messages.create(
-                body=f"Sorry {self.name}, your score is {self.score}. Try again",
-                from_='+13365856245',
-                to='+639685012432'
-            )
-
-        print(message.sid)
-        return super().save(*args, **kwargs)
 
 
 class TeacherExtra(models.Model):
@@ -102,15 +74,14 @@ class Notice(models.Model):
     def save(self, *args, **kwargs):
         if True:
             account_sid = 'AC297d646a8f4042594247b6b0f34334e8'
-            auth_token = '4a0cada5b3a68c5771a21e3753711221'
+            auth_token = '2e75bc69d281e2fdbd75cde9e37d9f79'
             client = Client(account_sid, auth_token)
 
             message = client.messages.create(
                 body=f"By: {self.by} - {self.message}  ",
                 from_='+19897472327',
                 to='+639564853818'
-                )
-
+            )
 
             print(message.sid)
             return super().save(*args, **kwargs)
