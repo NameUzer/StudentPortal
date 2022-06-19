@@ -80,8 +80,10 @@ urlpatterns = [
     path('teacher-viewbook', views.teacher_viewbook_view, name='teacher-viewbook'),
     path('student-viewbook', views.student_viewbook_view, name='student-viewbook'),
     path('issuebook', views.issuebook_view, name='issuebook'),
+    path('teacher-issuebook', views.teacher_issuebook_view, name='teacher-issuebook'),
     path('viewissuedbook', views.viewissuedbook_view, name='viewissuedbook'),
-    path('viewstudent', views.viewstudent_view, name='viewstudent'),
+    path('teacher-viewissuedbook', views.teacher_viewissuedbook_view, name='teacher-viewissuedbook'),
+    path('student-viewissuedbook', views.student_viewissuedbook_view, name='student-viewissuedbook'),
     path('viewissuedbookbystudent', views.viewissuedbookbystudent, name='viewissuedbookbystudent'),
 
     path('admin=library', views.admin_Library_view,name='admin-library'),
