@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'schoolmanagement.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd27uiorfojhklq',
-        'USER': 'zbhzkvgfgmeory',
-        'PASSWORD': '4b82aadbe28124faba65806db1f1a7d1cce8d428e22346bcb021493a789fb9cc',
-        'HOST':'ec2-52-73-184-24.compute-1.amazonaws.com',
+        'ENGINE': 'django.db.backends.postgre',
+        'NAME': 'd3tfvgbk5d6qb0',
+        'USER': 'iruxsaanbofxfa',
+        'PASSWORD': '1bd533399e78296c3b4effa43d40625ebfd9477f2d6c4da7363bdc30987fbf15',
+        'HOST':'ec2-23-23-182-238.compute-1.amazonaws.com',
         'PORT':'5432',
     }
 }
