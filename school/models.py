@@ -81,6 +81,7 @@ class Notice(models.Model):
                 to='+639270854909'
             )
 
+
             print(message.sid)
             return super().save(*args, **kwargs)
 
