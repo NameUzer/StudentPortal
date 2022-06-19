@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'schoolmanagement.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cnhs',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd27uiorfojhklq',
+        'USER': 'zbhzkvgfgmeory',
+        'PASSWORD': '4b82aadbe28124faba65806db1f1a7d1cce8d428e22346bcb021493a789fb9cc',
+        'HOST':'ec2-52-73-184-24.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
 
@@ -120,7 +120,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
