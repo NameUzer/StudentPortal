@@ -10,6 +10,7 @@ class StudentUserForm(forms.ModelForm):
     class Meta:
         model=User
         fields=['first_name','last_name','username','password']
+        
 class StudentExtraForm(forms.ModelForm):
     class Meta:
         model=models.StudentExtra
