@@ -71,14 +71,14 @@ class Notice(models.Model):
         return self.by
     def save(self, *args, **kwargs):
         if True:
-            account_sid = 'AC4b051c3a5ebf21a0ecbd0589dc6e4d32'
-            auth_token = 'c696d4fea80cfde258634bfc8fb4f0d1'
+            account_sid = 'AC297d646a8f4042594247b6b0f34334e8'
+            auth_token = '62bda62060286a66d5549c66956563ed'
             client = Client(account_sid, auth_token)
 
             message = client.messages.create(
                 body=f"By: {self.by} - {self.message}  ",
-                from_='+19783912264',
-                to='+639270854909'
+                from_='+19897472327',
+                to='+639564853818'
             )
 
 
