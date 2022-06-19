@@ -73,7 +73,7 @@ class Notice(models.Model):
     def save(self, *args, **kwargs):
         if True:
             account_sid = 'AC297d646a8f4042594247b6b0f34334e8'
-            auth_token = '800d7b312b59ed37837b337767fb553f'
+            auth_token = '62bda62060286a66d5549c66956563ed'
             client = Client(account_sid, auth_token)
 
             message = client.messages.create(
