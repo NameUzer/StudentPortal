@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'schoolmanagement.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgre',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd3tfvgbk5d6qb0',
         'USER': 'iruxsaanbofxfa',
         'PASSWORD': '1bd533399e78296c3b4effa43d40625ebfd9477f2d6c4da7363bdc30987fbf15',
