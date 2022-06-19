@@ -7,7 +7,7 @@ colorama==0.4.4
 debugpy==1.6.0
 decorator==5.1.1
 dj-database-url==0.5.0
-Django==3.0.5
+Django==3.1.14
 django-heroku==0.3.1
 django-widget-tweaks==1.4.8
 entrypoints==0.4
