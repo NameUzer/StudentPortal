@@ -174,13 +174,14 @@
   <div class="sidebar">
     <center>
 
-      <img src="{% static "images/user-default.png" %}" class="profile_image" alt="">
+      <img src="{% static "images/default-profile-picture.jpg" %}" class="profile_image" alt="">
       <h4>{{request.user.first_name}}</h4>
 
     </center>
 
     <a href="/student-dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
     <a href="/student-attendance"><i class="fas fa-address-card"></i><span>View Attendance</span></a>
+    <a href="/student=library"><i class="fas fa-book"></i><span>Library</span></a>
     <a href="/logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
 
   </div>

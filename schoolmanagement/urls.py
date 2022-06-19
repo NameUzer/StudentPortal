@@ -74,15 +74,19 @@ urlpatterns = [
     path('admin_teacher_student_cards', views.admin_teacher_student_card, name= 'cards'),
     path('ForgotPW',views.ForgotPW, name='ForgotPW'),
 
-    path('addbook', views.addbook_view, name='addbook'),
-    path('viewbook', views.viewbook_view, name='viewbook'),
+    path('admin-addbook', views.admin_addbook_view, name='admin-addbook'),
+    path('teacher-addbook', views.teacher_addbook_view, name='teacher-addbook'),
+    path('admin-viewbook', views.admin_viewbook_view, name='admin-viewbook'),
+    path('teacher-viewbook', views.teacher_viewbook_view, name='teacher-viewbook'),
+    path('student-viewbook', views.student_viewbook_view, name='student-viewbook'),
     path('issuebook', views.issuebook_view, name='issuebook'),
     path('viewissuedbook', views.viewissuedbook_view, name='viewissuedbook'),
     path('viewstudent', views.viewstudent_view, name='viewstudent'),
     path('viewissuedbookbystudent', views.viewissuedbookbystudent, name='viewissuedbookbystudent'),
 
-    path('admin=library', views.admin_Library_view,name='admin-library')
-
+    path('admin=library', views.admin_Library_view,name='admin-library'),
+    path('student=library', views.student_Library_view,name='student-library'),
+    path('teacher=library', views.teacher_Library_view,name='teacher-library')
 ]
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

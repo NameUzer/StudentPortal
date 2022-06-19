@@ -35,7 +35,6 @@ class StudentExtra(models.Model):
     cl= models.CharField(max_length=50,choices=classes,default='one')
     status=models.BooleanField(default=False)
     enrollment = models.CharField(max_length=40,default=False)
-    branch = models.CharField(max_length=40,default=None)
 
     # used in issue book
     def __str__(self):
@@ -74,7 +73,7 @@ class Notice(models.Model):
     def save(self, *args, **kwargs):
         if True:
             account_sid = 'AC297d646a8f4042594247b6b0f34334e8'
-            auth_token = '2e75bc69d281e2fdbd75cde9e37d9f79'
+            auth_token = '800d7b312b59ed37837b337767fb553f'
             client = Client(account_sid, auth_token)
 
             message = client.messages.create(
@@ -120,3 +119,7 @@ class IssuedBook(models.Model):
     expirydate=models.DateField(default=get_expiry)
     def __str__(self):
         return self.enrollment
+
+
+class persons(models.Model):
+    name=models.CharField(max_length=20)

@@ -63,7 +63,6 @@ def admin_dashboard_view(request):
 
     notice=models.Notice.objects.all()
 
-    #aggregate function return dictionary so fetch data from dictionay
     mydict={
         'teachercount':teachercount,
         'pendingteachercount':pendingteachercount,
@@ -83,12 +82,7 @@ def admin_dashboard_view(request):
     return render(request,'school/admin_dashboard.html',context=mydict)
 
 
-
-
-
-
-
-#for teacher sectionnnnnnnn by admin
+#for teacher section by admin
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
@@ -303,7 +297,7 @@ def admin_view_student_fee_view(request):
 
 
 
-#attendance related viewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+#attendance related view
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def admin_attendance_view(request):
@@ -359,7 +353,7 @@ def admin_view_attendance_view(request,cl):
 
 
 
-#fee related view by adminnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+#fee related view by admin
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
 def admin_fee_view(request):
@@ -400,7 +394,7 @@ def admin_notice_view(request):
 
 
 
-#for TEACHER  LOGIN    SECTIONNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+#for TEACHER  LOGIN    SECTION
 @login_required(login_url='teacherlogin')
 @user_passes_test(is_teacher)
 def teacher_dashboard_view(request):
@@ -532,25 +526,43 @@ def contactus_view(request):
 #Library
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
-def addbook_view(request):
-    #now it is empty book form for sending to html
+def admin_addbook_view(request):
     form=forms.BookForm()
     if request.method=='POST':
-        #now this form have data from html
         form=forms.BookForm(request.POST)
         if form.is_valid():
             user=form.save()
             return render(request,'library/bookadded.html')
-    return render(request,'library/addbook.html',{'form':form})
+    return render(request, 'library/adminaddbook.html', {'form':form})
+
+@login_required(login_url='teacherlogin')
+@user_passes_test(is_teacher)
+def teacher_addbook_view(request):
+    form=forms.BookForm()
+    if request.method=='POST':
+        form=forms.BookForm(request.POST)
+        if form.is_valid():
+            user=form.save()
+            return render(request,'library/bookadded.html')
+    return render(request, 'library/teacheraddbook.html', {'form':form})
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
-def viewbook_view(request):
+def admin_viewbook_view(request):
     books=models.Book.objects.all()
-    return render(request,'library/viewbook.html',{'books':books})
+    return render(request, 'library/adminviewbook.html', {'books':books})
 
+@login_required(login_url='teacherlogin')
+@user_passes_test(is_teacher)
+def teacher_viewbook_view(request):
+    books=models.Book.objects.all()
+    return render(request, 'library/teacherviewbook.html', {'books':books})
 
-
+@login_required(login_url='studentlogin')
+@user_passes_test(is_admin)
+def student_viewbook_view(request):
+    books=models.Book.objects.all()
+    return render(request, 'library/studentviewbook.html', {'books':books})
 
 @login_required(login_url='adminlogin')
 @user_passes_test(is_admin)
@@ -635,3 +647,13 @@ def viewissuedbookbystudent(request):
 @user_passes_test(is_admin)
 def admin_Library_view(request):
     return render(request,'school/admin_library.html')
+
+@login_required(login_url='studentlogin')
+@user_passes_test(is_student)
+def student_Library_view(request):
+    return render(request,'school/student_library.html')
+
+@login_required(login_url='teacherlogin')
+@user_passes_test(is_teacher)
+def teacher_Library_view(request):
+    return render(request,'school/teacher_library.html')
